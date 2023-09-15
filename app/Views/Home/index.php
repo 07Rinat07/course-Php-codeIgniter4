@@ -1,6 +1,12 @@
-<?php
+<?= $this->extend("layouts/default") ?>
 
-echo "<h1>Home page</h1>";
+<?= $this->section("title") ?>HOME PAGE<?= $this->endSection() ?>
+
+<?= $this->section("content") ?>
+
+<h1>HOME PAGE</h1>
+
+<?= $this->endSection() ?>
 
 
 
