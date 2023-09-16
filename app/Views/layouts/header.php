@@ -14,7 +14,7 @@
                     <a class="nav-link" href="http://localhost:8080/tasks">Tasks</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Service</a>
+                    <a class="nav-link" href="<?= site_url("/tasks/new") ?>">Add task</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contacts</a>
