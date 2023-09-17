@@ -54,4 +54,34 @@ class Tasks extends BaseController
                ->with('data', $data);
         }
     }
+
+    public function edit($id)
+    {
+        $model = new \App\Models\TasksModel();
+        $task = $model->find($id);
+
+        return view('Tasks/edit', ['task' => $task]);
+    }
+
+    public function update($id)
+    {
+        $model = new \App\Models\TasksModel();
+
+        $data = [
+            'title' => $this->request->getPost('title'),
+            'description' => $this->request->getPost('description')
+        ];
+        $result = $model->update($id, $data);
+        if (!$result) {
+            return redirect()
+                ->back()
+                ->withInput($data)
+                ->with('errors', $model->errors());
+        } else {
+            return redirect()
+                ->to('/tasks')
+                ->with('success', 'Task updated')
+                ->with('data', $data);
+        }
+    }
 }

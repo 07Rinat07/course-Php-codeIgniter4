@@ -13,7 +13,10 @@
                <?= esc($task['title']) ?>
            </a> |
            <?=esc( $task['description']) ?> |
-           <?=esc( $task['created_at']) ?>
+           <?=esc( $task['created_at']) ?> |
+           <a href="<?=site_url("/tasks/edit/" . $task['id']) ?>">
+              edit
+           </a> |
        </li>
        <?php endforeach ?>
    </ul>
